@@ -1,9 +1,6 @@
 
 line-length = 79
-exclude = [
-    "tests/",
-    ".venv/",
-]
+exclude = ["tests/", "*/migrations/", ".venv/"]
 
 [lint]
 extend-select = [
@@ -42,11 +39,16 @@ ignore = [
 ]
 preview = true
 
+[lint.extend-per-file-ignores]
+"settings.py" = ["E501"]
+"models.py" = ["D105", "D106"]
+
 [lint.mccabe]
 max-complexity = 10
 
 [lint.isort]
 combine-as-imports = true
+known-local-folder = ['blogicum', 'core', 'blog', 'pages']
 
 [lint.flake8-quotes]
 inline-quotes = "single"

@@ -16,6 +16,7 @@ django = "3.2.16"
 django-bootstrap5 = "22.2"
 beautifulsoup4 = "^4.12.3"
 pillow = "9.3.0"
+django-debug-toolbar = "3.8.1"
 
 [tool.poetry.group.testing.dependencies]
 ruff = "^0.4.10"
@@ -32,7 +33,6 @@ max_line_length = 79
 testpaths = ["tests"]
 
 [tool.mypy]
-mypy_path = "src"
 strict_optional = false
 disable_error_code = "import-untyped"
 
