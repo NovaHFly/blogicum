@@ -1,19 +1,31 @@
 [tool.poetry]
-name = "sampleproject"
+name = "blogicum"
 version = "0.1.0"
-description = "Sample project"
+description = "Social network for personal diary publishing"
 authors = ["NovaHFly <mugiviska@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.scripts]
+manage_tool = "manage:main"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
+django = "3.2.16"
+django-bootstrap5 = "22.2"
+beautifulsoup4 = "^4.12.3"
+pillow = "9.3.0"
 
 [tool.poetry.group.testing.dependencies]
 ruff = "^0.4.10"
 mypy = "^1.10.1"
 pytest = "^8.2.2"
+djlint = "^1.34.1"
+
+[tool.djlint]
+ignore = "T003,H030,H031"
+max_line_length = 79
 
 
 [tool.pytest.ini_options]
