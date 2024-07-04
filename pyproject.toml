@@ -17,11 +17,13 @@ django-bootstrap5 = "22.2"
 beautifulsoup4 = "^4.12.3"
 pillow = "9.3.0"
 django-debug-toolbar = "3.8.1"
+pytest-lazy-fixture = "^0.6.3"
+pytest-django = "^4.8.0"
 
 [tool.poetry.group.testing.dependencies]
 ruff = "^0.4.10"
 mypy = "^1.10.1"
-pytest = "^8.2.2"
+pytest = "^7"
 djlint = "^1.34.1"
 
 [tool.djlint]
