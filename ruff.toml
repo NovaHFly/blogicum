@@ -1,6 +1,6 @@
 
 line-length = 79
-exclude = ["tests/", "*/migrations/", ".venv/"]
+exclude = ["*/migrations/", ".venv/"]
 
 [lint]
 extend-select = [
@@ -42,6 +42,7 @@ preview = true
 [lint.extend-per-file-ignores]
 "settings.py" = ["E501"]
 "models.py" = ["D105", "D106"]
+"*tests*" = ["ANN"]
 
 [lint.mccabe]
 max-complexity = 10
