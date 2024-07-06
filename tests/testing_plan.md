@@ -25,8 +25,10 @@
 3. Comments must display in order from oldest to newest
 4. Post detail page must contain comment form for authorized users
 5. Correct forms are passed to post add/edit, comment edit and profile edit pages.
-6. Unpublished posts do not show in home page and category pages
-7. Unpublished posts show in profile for their author and do not show for everyone else
+6. Category only contains posts which belong to it
+7. Profile only contains posts which were written by this user
+8. Unpublished posts do not show in home page and category pages
+9. Unpublished posts show in profile for their author and do not show for everyone else
 
 ## Logic tests
 1. Anonymous user can't create posts nor add comments
