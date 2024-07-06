@@ -56,6 +56,15 @@ def category() -> Category:
 
 
 @pytest.fixture
+def other_category() -> Category:
+    return Category.objects.create(
+        title='Other cat.',
+        slug='other_cat',
+        description='Other cat description',
+    )
+
+
+@pytest.fixture
 def post(author, location, category) -> Post:
     return Post.objects.create(
         title='Title',
@@ -120,7 +129,12 @@ def about_url() -> str:
 
 
 @pytest.fixture
-def profile_url(author) -> str:
+def user_profile_url(user) -> str:
+    return reverse('blog:profile', args=(user.username,))
+
+
+@pytest.fixture
+def a_profile_url(author) -> str:
     return reverse('blog:profile', args=(author.username,))
 
 
@@ -132,6 +146,11 @@ def profile_edit_url() -> str:
 @pytest.fixture
 def category_url(category) -> str:
     return reverse('blog:category_posts', args=(category.slug,))
+
+
+@pytest.fixture
+def other_category_url(other_category) -> str:
+    return reverse('blog:category_posts', args=(other_category.slug,))
 
 
 @pytest.fixture
@@ -224,7 +243,7 @@ def delayed_post(author, location, category) -> Post:
 
 
 @pytest.fixture
-def unpub_category_post(
+def unpub_cat_post(
     author,
     location,
     unpublished_category,
@@ -250,10 +269,10 @@ def unpub_post_url(unpublished_post) -> str:
 
 
 @pytest.fixture
-def unpub_category_post_url(unpub_category_post) -> str:
+def unpub_category_post_url(unpub_cat_post) -> str:
     return reverse(
         'blog:post_detail',
-        args=(unpub_category_post.id,),
+        args=(unpub_cat_post.id,),
     )
 
 

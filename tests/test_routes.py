@@ -14,7 +14,7 @@ NOT_FOUND = HTTPStatus.NOT_FOUND
         (lf('index_url'), lf('client'), OK),
         (lf('category_url'), lf('client'), OK),
         (lf('post_detail_url'), lf('client'), OK),
-        (lf('profile_url'), lf('client'), OK),
+        (lf('user_profile_url'), lf('client'), OK),
         (lf('profile_edit_url'), lf('user_client'), OK),
         (lf('post_create_url'), lf('user_client'), OK),
         (lf('post_edit_url'), lf('author_client'), OK),
