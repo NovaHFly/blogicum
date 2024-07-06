@@ -47,6 +47,11 @@ def location() -> Location:
 
 
 @pytest.fixture
+def other_location() -> Location:
+    return Location.objects.create(name='Other location')
+
+
+@pytest.fixture
 def category() -> Category:
     return Category.objects.create(
         title='Category title',
