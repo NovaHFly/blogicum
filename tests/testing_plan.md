@@ -36,11 +36,3 @@
 3. Only author can edit and delete their posts and comments
 4. Authorized user can edit their profile
 5. Anonymous user cannot edit profiles
-
-# Test groups
-1. App_Blog
-   1. Posts
-   2. Comments
-   3. Unpublished posts
-2. Static pages
-3. Auth routes
