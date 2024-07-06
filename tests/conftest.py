@@ -1,4 +1,5 @@
 from datetime import timedelta
+from random import randint
 
 import pytest
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -6,7 +7,11 @@ from django.test import Client
 from django.urls import reverse
 from django.utils import timezone
 
+from blog.constants import POSTS_ON_PAGE
 from blog.models import Category, Comment, Location, Post
+
+DAY_SPREAD = 50
+COMMENT_COUNT = 15
 
 
 def _create_client(user: AbstractBaseUser) -> Client:
@@ -69,6 +74,34 @@ def comment(author, post) -> Comment:
         author=author,
         post=post,
     )
+
+
+@pytest.fixture
+def create_many_posts(author, location, category) -> None:
+    now = timezone.now()
+    for i in range(POSTS_ON_PAGE + 1):
+        Post.objects.create(
+            title=f'Title {i}',
+            text='Text',
+            pub_date=now - timedelta(days=randint(0, DAY_SPREAD)),
+            author=author,
+            location=location,
+            category=category,
+        )
+
+
+@pytest.fixture
+def create_many_comments(post, author) -> None:
+    for i in range(COMMENT_COUNT):
+        comment = Comment.objects.create(
+            text=f'Comment {i}',
+            author=author,
+            post=post,
+        )
+        comment.created_at = post.pub_date + timedelta(
+            days=randint(0, DAY_SPREAD)
+        )
+        comment.save()
 
 
 @pytest.fixture
