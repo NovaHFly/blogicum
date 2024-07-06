@@ -18,3 +18,24 @@
    1. Post was unpublished
    2. Post belongs to a category which was unpublished
    3. Post is not published yet (its pub_date is greater than now)
+
+## Content tests
+1. Posts must display in order from newest to oldest
+2. Comments must display in order from oldest to newest
+3. Post detail page must contain comment form for authorized users
+4. Correct forms are passed to post add/edit, comment edit and profile edit pages.
+5. Unpublished posts do not show in home page and category pages
+6. Unpublished posts show in profile for their author and do not show for everyone else
+
+## Logic tests
+1. Anonymous user can't create posts nor add comments
+2. Authorized user can do all of the above
+3. Only author can edit and delete their posts and comments
+
+# Test groups
+1. App_Blog
+   1. Posts
+   2. Comments
+   3. Unpublished posts
+2. Static pages
+3. Auth routes
