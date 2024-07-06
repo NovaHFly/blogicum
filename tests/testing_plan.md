@@ -34,6 +34,8 @@
 1. Anonymous user can't create posts nor add comments
 2. Authorized user can do all of the above
 3. Only author can edit and delete their posts and comments
+4. Authorized user can edit their profile
+5. Anonymous user cannot edit profiles
 
 # Test groups
 1. App_Blog
